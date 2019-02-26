@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>org.wso2.msf4j</groupId>
+		<artifactId>msf4j-service</artifactId>
+		<version>2.0.0</version>
+		<relativePath>../../poms/msf4j-service/pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>account-service-msf4j</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>org.wso2.msf4j</groupId>
+			<artifactId>msf4j-spring</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring</artifactId> 
+			<version>2.5.6</version> </dependency> -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.2.6.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.2.6.RELEASE</version>
+		</dependency>
+
+		<!-- MySQL database driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.9</version>
+		</dependency>
+	</dependencies>
+	<properties>
+		<microservice.mainClass>com.hcl.msf4j.resource.Application</microservice.mainClass>
+	</properties>
+</project>
