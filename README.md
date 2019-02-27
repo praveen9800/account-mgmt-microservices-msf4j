@@ -122,9 +122,7 @@ Transaction Success!!! INR 2000.0 successfully debited from the account 101
 
 ## 4. Fund Transfer Microservice
 
-This microservice deals with the transfer of funds from one customer's accout to other customer. Once this microservice is invoked, it will first communicate with debit microservice. If the debit
-operation success, then it will call the credit microservice and inturn debit/credit status will be updated in MySQL database by Debit/Credit Microservices. Once the transaction is completed,
-the transaction history will be updated in Mongo database by Fund Transfer Microservice.
+This microservice deals with the transfer of funds from one customer's accout to other customer. Once this microservice is invoked, it will first communicate with debit microservice. If the debit operation success, then it will call the credit microservice and inturn debit/credit status will be updated in MySQL database by Debit/Credit Microservices respectively. Communication among these microservices are achieved via HTTP/HTTPS. Once the transaction is completed, the transaction history will be updated in Mongo database by Fund Transfer Microservice.
 
 If for any reason debit operation is success and credit is failed, then the transaction will be reversed and the customer account will be credited with the appropriate amount.
 
