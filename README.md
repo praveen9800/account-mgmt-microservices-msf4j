@@ -34,15 +34,16 @@ public class TransportConfiguration {
 
 There are four microservices developed to demonstrate the Account Management use case. Typically the basic operations done on a banking customer account.
 
+![Image of Workflow](https://github.com/praveen9800/account-mgmt-microservices-msf4j/blob/master/accountmgmt_msf4j.png)
+
 ### 1. Account Inquiry Microservice
 ### 2. Credit Microservice
 ### 3. Debit Microservice
 ### 4. Fund Transfer Microservice
 
-![Image of Workflow](https://github.com/praveen9800/microservice-sample-msf4j/blob/master/accountinquiry_msf4j.png)
+Will see each of these microservices in detail below.
 
-
-## Account Inquiry Microservice
+## 1. Account Inquiry Microservice
 
 This microservice provides the account details of a banking customer. It fetches the account related data from MySQL database where all the customer data are stored.
 
@@ -52,7 +53,7 @@ This microservice provides the account details of a banking customer. It fetches
 http://localhost:8090/bank/accounts/1011
 ```
 
-## Sample Response
+### Sample Response
 
 ```
 {
@@ -63,7 +64,8 @@ http://localhost:8090/bank/accounts/1011
 }
 ```
 
-## Credit Microservice
+
+## 2. Credit Microservice
 
 This microservice deals with the amount credit of particular customer's account. It updates the customer's account stored in MySQL database.
 
@@ -73,7 +75,7 @@ This microservice deals with the amount credit of particular customer's account.
 http://localhost:8100/bank/credit
 ```
 
-## Sample Request
+### Sample Request
 
 ```
 {
@@ -83,13 +85,14 @@ http://localhost:8100/bank/credit
   "currency" : "INR"
 }
 ```
-## Sample Response
+### Sample Response
 
 ```
 Transaction Success!!! INR 2000.0 successfully credited to the account 101
 ```
 
-## Debit Microservice
+
+## 3. Debit Microservice
 
 This microservice deals with the amount debit of particular customer's account. It updates the customer's account stored in MySQL database.
 
@@ -99,7 +102,7 @@ This microservice deals with the amount debit of particular customer's account. 
 http://localhost:8090/bank/accounts/1011
 ```
 
-## Sample Request
+### Sample Request
 
 ```
 {
@@ -110,17 +113,16 @@ http://localhost:8090/bank/accounts/1011
 }
 
 ```
-## Sample Response
+### Sample Response
 
 ```
 Transaction Success!!! INR 2000.0 successfully debited from the account 101
 ```
 
-## Fund Transfer Microservice
 
-This microservice deals with the transfer of funds from one customer's accout to other customer. Once this microservice is invoked, it will first communicate with debit microservice. If the debit
-operation success, then it will call the credit microservice and inturn debit/credit status will be updated in MySQL database by Debit/Credit Microservices. Once the transaction is completed,
-the transaction history will be updated in Mongo database by Fund Transfer Microservice.
+## 4. Fund Transfer Microservice
+
+This microservice deals with the transfer of funds from one customer's accout to other customer. Once this microservice is invoked, it will first communicate with debit microservice. If the debit operation success, then it will call the credit microservice and inturn debit/credit status will be updated in MySQL database by Debit/Credit Microservices respectively. Communication among these microservices are achieved via HTTP/HTTPS. Once the transaction is completed, the transaction history will be updated in Mongo database by Fund Transfer Microservice.
 
 If for any reason debit operation is success and credit is failed, then the transaction will be reversed and the customer account will be credited with the appropriate amount.
 
@@ -131,7 +133,7 @@ If for any reason debit operation is success and credit is failed, then the tran
 http://localhost:8120/bank/fundTransfer
 ```
 
-## Sample Request
+### Sample Request
 
 ```
 {
@@ -142,13 +144,14 @@ http://localhost:8120/bank/fundTransfer
 }
 
 ```
-## Sample Response
+### Sample Response
 
 ```
 Transaction Success!!! INR 2000.0 debited from the account 101 and credited to the account 102
 ```
 
-## Service to view the transaction history
+
+# Service to view the transaction history
 
 Apart from the four major microservices, an additional service was developed which is to view the transaction history stored in the Mongo database. It will list all the transactions done
 on a particular customer account.
@@ -160,7 +163,7 @@ on a particular customer account.
 http://localhost:8120/bank/fundTransfer/transactions/101
 ```
 
-## Sample Response
+### Sample Response
 
 ```
 [
