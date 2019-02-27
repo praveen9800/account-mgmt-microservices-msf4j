@@ -34,12 +34,13 @@ public class TransportConfiguration {
 
 There are four microservices developed to demonstrate the Account Management use case. Typically the basic operations done on a banking customer account.
 
+![Image of Workflow](https://github.com/praveen9800/account-mgmt-microservices-msf4j/blob/master/accountmgmt_msf4j.png)
+
 ### 1. Account Inquiry Microservice
 ### 2. Credit Microservice
 ### 3. Debit Microservice
 ### 4. Fund Transfer Microservice
 
-![Image of Workflow](https://github.com/praveen9800/account-mgmt-microservices-msf4j/blob/master/accountmgmt_msf4j.png)
 
 
 ## Account Inquiry Microservice
