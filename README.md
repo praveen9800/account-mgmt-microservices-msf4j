@@ -39,7 +39,7 @@ There are four microservices developed to demonstrate the Account Management use
 ### 3. Debit Microservice
 ### 4. Fund Transfer Microservice
 
-![Image of Workflow](https://github.com/praveen9800/microservice-sample-msf4j/blob/master/accountinquiry_msf4j.png)
+![Image of Workflow](https://github.com/praveen9800/account-mgmt-microservices-msf4j/blob/master/accountmgmt_msf4j.png)
 
 
 ## Account Inquiry Microservice
@@ -52,7 +52,7 @@ This microservice provides the account details of a banking customer. It fetches
 http://localhost:8090/bank/accounts/1011
 ```
 
-## Sample Response
+### Sample Response
 
 ```
 {
@@ -62,6 +62,7 @@ http://localhost:8090/bank/accounts/1011
   "currency" : "INR"
 }
 ```
+
 
 ## Credit Microservice
 
@@ -73,7 +74,7 @@ This microservice deals with the amount credit of particular customer's account.
 http://localhost:8100/bank/credit
 ```
 
-## Sample Request
+### Sample Request
 
 ```
 {
@@ -83,11 +84,12 @@ http://localhost:8100/bank/credit
   "currency" : "INR"
 }
 ```
-## Sample Response
+### Sample Response
 
 ```
 Transaction Success!!! INR 2000.0 successfully credited to the account 101
 ```
+
 
 ## Debit Microservice
 
@@ -99,7 +101,7 @@ This microservice deals with the amount debit of particular customer's account. 
 http://localhost:8090/bank/accounts/1011
 ```
 
-## Sample Request
+### Sample Request
 
 ```
 {
@@ -110,11 +112,12 @@ http://localhost:8090/bank/accounts/1011
 }
 
 ```
-## Sample Response
+### Sample Response
 
 ```
 Transaction Success!!! INR 2000.0 successfully debited from the account 101
 ```
+
 
 ## Fund Transfer Microservice
 
@@ -131,7 +134,7 @@ If for any reason debit operation is success and credit is failed, then the tran
 http://localhost:8120/bank/fundTransfer
 ```
 
-## Sample Request
+### Sample Request
 
 ```
 {
@@ -142,11 +145,12 @@ http://localhost:8120/bank/fundTransfer
 }
 
 ```
-## Sample Response
+### Sample Response
 
 ```
 Transaction Success!!! INR 2000.0 debited from the account 101 and credited to the account 102
 ```
+
 
 ## Service to view the transaction history
 
@@ -160,7 +164,7 @@ on a particular customer account.
 http://localhost:8120/bank/fundTransfer/transactions/101
 ```
 
-## Sample Response
+### Sample Response
 
 ```
 [
