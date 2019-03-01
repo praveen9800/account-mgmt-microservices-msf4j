@@ -1,7 +1,7 @@
 # Microservices communication using synchronous protocol like HTTP/HTTPS - MSF4J
 
 MSF4J - Microservices Framework for Java is a WSO2 framework for developing microservices. It is compatible with other spring based dependencies
-and work together.
+and work together. 
 
 
 ## Dependency
@@ -29,6 +29,13 @@ public class TransportConfiguration {
 
 }
 ```
+
+For more information about MSF4J, please refer the below link.
+
+```
+https://wso2.com/products/microservices-framework-for-java/
+```
+
 
 ## Overview
 
