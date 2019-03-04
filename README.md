@@ -194,3 +194,7 @@ http://localhost:8120/bank/fundTransfer/transactions/101
     }
 ]
 ```
+
+## Disclaimer
+
+This is not an official HCL ERS product.
